@@ -21,8 +21,6 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
-    
- #    links = doc.css(".social-icon-container")
  
      links = doc.css(".social-icon-container").children.css("a").map { |el| el.attribute('href').value}
 
@@ -45,9 +43,6 @@ class Scraper
        hash[:bio] = doc.css(".details-container p").text
        
        hash 
-      #  binding.pry
-    # binding.pry 
-
   end
 end
 
