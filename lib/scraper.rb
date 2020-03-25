@@ -27,21 +27,21 @@ class Scraper
        
        if link.include?("twitter") 
          hash[:twitter] = link
-       end 
-       if link.include?("linkedin") 
+       
+       elsif link.include?("linkedin") 
          hash[:linkedin] = link
-       end
-       if link.include?("github") 
+       
+       elsif link.include?("github") 
          hash[:github] = link
-       end
-       if link.include?(".com") 
+       
+       else 
          hash[:blog] = link
        end
        
        hash[:profile_quote]  = doc.css(".vitals-text-container div").text
        hash[:bio] = doc.css(".details-container p").text
        
-    binding.pry 
+   # binding.pry 
      end 
        hash 
   end
