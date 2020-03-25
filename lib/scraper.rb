@@ -32,7 +32,7 @@ class Scraper
        if links[1].include?("linkedin") 
          hash[:linkedin] = links[1]
        end
-       if links[2].include?("github") 
+       if links[2] && links[2]include?("github") 
          hash[:github] = links[2]
        end
        if links[3].include?(".com") 
